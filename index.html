@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khu vườn của Tâm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Khu vườn của Tâm 🌱</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">💰 Tiền:</span>
+                    <span class="value" id="money">1000</span>
+                </div>
+                <div class="stat">
+                    <span class="label">📅 Ngày:</span>
+                    <span class="value" id="day">1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="garden" id="garden"></div>
+        </div>
+
+        <div class="shop">
+            <h2>🏪 Cửa hàng</h2>
+            <div class="shop-items">
+                <button class="shop-btn" onclick="buySeed('tomato')">
+                    🍅 Cà chua (50💰)
+                </button>
+                <button class="shop-btn" onclick="buySeed('carrot')">
+                    🥕 Cà rốt (40💰)
+                </button>
+                <button class="shop-btn" onclick="buySeed('flower')">
+                    🌻 Hoa hướng dương (60💰)
+                </button>
+                <button class="shop-btn" onclick="buySeed('corn')">
+                    🌽 Ngô (45💰)
+                </button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" onclick="nextDay()">⏭️ Ngày tiếp theo</button>
+            <button class="control-btn" onclick="resetGame()">🔄 Làm lại</button>
+        </div>
+
+        <div class="info" id="info"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
