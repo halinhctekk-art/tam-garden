@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #2ecc71;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: #f0f0f0;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.stat .label {
+    color: #333;
+}
+
+.stat .value {
+    color: #2ecc71;
+    margin-left: 10px;
+    font-size: 1.3em;
+}
+
+.game-area {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.garden {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 10px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5deb3 0%, #deb887 100%);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.plot {
+    width: 80px;
+    height: 80px;
+    background: #8b7355;
+    border: 2px solid #654321;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.plot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.plot.has-seed {
+    background: linear-gradient(135deg, #90EE90 0%, #228B22 100%);
+}
+
+.plot.growing-1 {
+    background: linear-gradient(135deg, #FFEB3B 0%, #FFC107 100%);
+}
+
+.plot.growing-2 {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+}
+
+.plot.ready {
+    background: linear-gradient(135deg, #00BCD4 0%, #0097A7 100%);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(0, 188, 212, 0.9);
+    }
+}
+
+.plot-info {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    white-space: nowrap;
+    color: #333;
+}
+
+.shop {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px solid #ffc107;
+}
+
+.shop h2 {
+    color: #ff6b00;
+    margin-bottom: 15px;
+}
+
+.shop-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.shop-btn {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.shop-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+}
+
+.shop-btn:active {
+    transform: translateY(-1px);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+.info {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #2ecc71;
+    min-height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #1b5e20;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .garden {
+        grid-template-columns: repeat(3, 70px);
+    }
+
+    .plot {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5em;
+    }
+
+    .shop-items {
+        grid-template-columns: 1fr;
+    }
+}
